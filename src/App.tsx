@@ -1,7 +1,14 @@
 import React from "react";
+import { Container } from "./globalStyles";
+import Header from "./components/header";
 
 const App = () => {
-  return <div>App</div>;
+  return (
+    <>
+      <Header />
+      <Container>oi</Container>
+    </>
+  );
 };
 
 export default App;
