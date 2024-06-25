@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <S.HeaderBackGround>
       <S.TagHeader>
-        <S.Logo>capputeeno</S.Logo>
+        <S.Logo>Capputeeno</S.Logo>
         <div>
           <PrimaryInputWSearchIcon
             placeholder="Procurando por algo específico?"

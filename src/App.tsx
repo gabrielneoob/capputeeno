@@ -1,12 +1,14 @@
-import React from "react";
 import { Container } from "./globalStyles";
 import Header from "./components/header";
+import MainRoutes from "./routes";
 
 const App = () => {
   return (
     <>
       <Header />
-      <Container>oi</Container>
+      <Container>
+        <MainRoutes />
+      </Container>
     </>
   );
 };
