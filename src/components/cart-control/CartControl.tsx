@@ -5,8 +5,6 @@ import * as S from "./styles";
 const CartControl = () => {
   const { value } = useLocalStorage("CART-ITEMS");
 
-  console.log(value);
-
   return (
     <S.CartWrapper>
       <ShoppingBagIcon />

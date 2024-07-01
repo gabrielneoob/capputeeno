@@ -1,4 +1,3 @@
-import { useState } from "react";
 import * as S from "./styles";
 import PrimaryInputWSearchIcon from "../primary-input/primary-input";
 import CartControl from "../cart-control";

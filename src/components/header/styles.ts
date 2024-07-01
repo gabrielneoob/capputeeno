@@ -10,7 +10,7 @@ export const TagHeader = styled.header`
   justify-content: space-between;
   margin: 0 auto;
   max-width: 1400px;
-  padding: 1rem 0;
+  padding: 12px 24px;
 
   > div {
     display: flex;
@@ -18,12 +18,20 @@ export const TagHeader = styled.header`
     justify-content: center;
     gap: 1.2rem;
   }
+
+  @media (min-width: 768px) {
+    padding: 20px 160px;
+  }
 `;
 
 export const Logo = styled.a`
   font-family: "Saira", sans-serif;
   color: var(--logo-color);
-  font-size: 2.5rem;
+  font-size: 24px;
   font-weight: bold;
   cursor: pointer;
+
+  @media (min-width: 768px) {
+    font-size: 40px;
+  }
 `;
