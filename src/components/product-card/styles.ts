@@ -24,7 +24,7 @@ export const CardContainer = styled.div`
 `;
 
 export const ProdcutName = styled.p`
-  color: var(--text-dark);
+  color: #41414d;
   font-family: inherit;
   padding: 7px 0;
   border-bottom: 1px solid #dce2e5;
@@ -33,5 +33,7 @@ export const ProdcutName = styled.p`
 export const Price = styled.p`
   color: #09090a;
   font-family: inherit;
+  font-size: 14px;
   padding: 7px 0;
+  font-weight: bold;
 `;

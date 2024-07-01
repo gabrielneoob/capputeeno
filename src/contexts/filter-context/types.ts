@@ -1,14 +1,14 @@
 export enum FilterType {
-  "ALL",
-  "SHIRT",
-  "MUG",
+  ALL = "ALL",
+  SHIRT = "SHIRT",
+  MUG = "MUG",
 }
 
 export enum PriorityType {
-  "POPULARITY",
-  "NEWS",
-  "MINOR_PRICE",
-  "BIGGEST_PRICE",
+  POPULARITY = "POPULARITY",
+  NEWS = "NEWS",
+  MINOR_PRICE = "MINOR_PRICE",
+  BIGGEST_PRICE = "BIGGEST_PRICE",
 }
 
 export interface FilterContextProps {

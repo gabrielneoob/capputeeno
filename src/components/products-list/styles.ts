@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const ProductsContainer = styled.div`
   display: grid;
-  justify-items: center;
+  justify-content: center;
 
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem 0;
+  grid-template-columns: repeat(auto-fill, 256px);
+  grid-gap: 32px;
+  max-width: 100%;
 `;

@@ -7,16 +7,19 @@ import { FilterContexProvider } from "./contexts/filter-context/filterContext.ts
 import { QueryClientProvider } from "react-query";
 import { queryClient } from "./queryClient.ts";
 import { ReactQueryDevtools } from "react-query/devtools";
+import { SkeletonTheme } from "react-loading-skeleton";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <QueryClientProvider client={queryClient}>
-        <FilterContexProvider>
-          <App />
-          <ReactQueryDevtools initialIsOpen={false} />
-        </FilterContexProvider>
-      </QueryClientProvider>
-    </BrowserRouter>
+    <SkeletonTheme baseColor="#313131" highlightColor="#525252">
+      <BrowserRouter>
+        <QueryClientProvider client={queryClient}>
+          <FilterContexProvider>
+            <App />
+            <ReactQueryDevtools initialIsOpen={false} />
+          </FilterContexProvider>
+        </QueryClientProvider>
+      </BrowserRouter>
+    </SkeletonTheme>
   </React.StrictMode>
 );

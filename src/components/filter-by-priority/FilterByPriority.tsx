@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ArrowDownIcon } from "../icons/arrow-down-icon";
 import * as S from "./styles";
 import { useFilter } from "../../contexts/filter-context/filterContext";
@@ -13,12 +13,7 @@ const dataFilters = [
 
 const FilterByPriority = () => {
   const [isOpen, setIsopen] = useState(false);
-  const { priority, setPriority } = useFilter();
-
-  useEffect(() => {
-    console.log(priority);
-    console.log(PriorityType[1]);
-  }, [priority]);
+  const { setPriority } = useFilter();
 
   const handleChangePriority = (value: string) => {
     switch (value) {
