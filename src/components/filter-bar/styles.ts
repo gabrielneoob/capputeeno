@@ -5,5 +5,9 @@ export const FilterContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
+
+  @media (min-width: ${(props) => props.theme.desktopBreakPoint}) {
+    padding: 2rem 0;
+  }
 `;

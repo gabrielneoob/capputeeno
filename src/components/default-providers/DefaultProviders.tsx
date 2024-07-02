@@ -8,7 +8,8 @@ import { FilterContexProvider } from "../../contexts/filter-context/filterContex
 import { ReactQueryDevtools } from "react-query/devtools";
 
 const theme = {
-  desktopBreakPoint: "768px",
+  desktopBreakPoint: "968px",
+  tabletBreakPoint: "768px",
 };
 
 const DefaultProviders = ({ children }: { children: ReactNode }) => {

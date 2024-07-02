@@ -19,7 +19,7 @@ export const TagHeader = styled.header`
     gap: 1.2rem;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: ${(props) => props.theme.desktopBreakPoint}) {
     padding: 20px 160px;
   }
 `;
@@ -31,7 +31,11 @@ export const Logo = styled.a`
   font-weight: bold;
   cursor: pointer;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${(props) => props.theme.tabletBreakPoint}) {
+    font-size: 24px;
+  }
+
+  @media (min-width: ${(props) => props.theme.desktopBreakPoint}) {
     font-size: 40px;
   }
 `;
