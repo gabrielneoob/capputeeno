@@ -1,14 +1,16 @@
-import useLocalStorage from "../../hooks/useLocalStorage";
+import { useNavigate } from "react-router-dom";
+import { useFilter } from "../../contexts/filter-context/filterContext";
 import ShoppingBagIcon from "../icons/shopping-bag-icon";
 import * as S from "./styles";
 
 const CartControl = () => {
-  const { value } = useLocalStorage("CART-ITEMS");
+  const { cart } = useFilter();
+  const navigate = useNavigate();
 
   return (
-    <S.CartWrapper>
-      <ShoppingBagIcon />
-      {value.length > 0 && <S.CartCount>{value.length}</S.CartCount>}
+    <S.CartWrapper onClick={() => navigate("/payment")}>
+      <ShoppingBagIcon type="open-cart" />
+      {cart.length > 0 && <S.CartCount>{cart.length}</S.CartCount>}
     </S.CartWrapper>
   );
 };

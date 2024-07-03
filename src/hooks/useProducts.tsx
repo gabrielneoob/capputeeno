@@ -9,7 +9,7 @@ export const useProducts = () => {
   const searchDeferred = useDeferredValue(search);
   const query = mountQuery(type, priority);
   const { data, isLoading } = useQuery({
-    queryFn: () => api.getProduct(query),
+    queryFn: () => api.getProducts(query),
     queryKey: ["products", type, priority],
   });
 

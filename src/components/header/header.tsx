@@ -2,13 +2,15 @@ import * as S from "./styles";
 import PrimaryInputWSearchIcon from "../primary-input/primary-input";
 import CartControl from "../cart-control";
 import { useFilter } from "../../contexts/filter-context/filterContext";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const { setSearch, search } = useFilter();
+  const navigate = useNavigate();
   return (
     <S.HeaderBackGround>
       <S.TagHeader>
-        <S.Logo>Capputeeno</S.Logo>
+        <S.Logo onClick={() => navigate("/")}>Capputeeno</S.Logo>
         <div>
           <PrimaryInputWSearchIcon
             placeholder="Procurando por algo específico?"

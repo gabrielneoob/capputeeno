@@ -1,5 +1,13 @@
-import { ReactNode, createContext, useContext, useState } from "react";
+import {
+  ReactNode,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import { FilterContextProps, FilterType, PriorityType } from "./types";
+import { ProductProps } from "../../api/types";
+import useLocalStorage from "../../hooks/useLocalStorage";
 
 const FilterContext = createContext<FilterContextProps>({
   search: "",
@@ -10,6 +18,8 @@ const FilterContext = createContext<FilterContextProps>({
   setSearch: () => {},
   setType: () => {},
   setPriority: () => {},
+  cart: [],
+  setCart: () => {},
 });
 
 export const FilterContexProvider = ({ children }: { children: ReactNode }) => {
@@ -17,10 +27,27 @@ export const FilterContexProvider = ({ children }: { children: ReactNode }) => {
   const [page, setPage] = useState(0);
   const [type, setType] = useState(FilterType.ALL);
   const [priority, setPriority] = useState(PriorityType.POPULARITY);
+  const [cart, setCart] = useState<ProductProps[]>(
+    JSON.parse(localStorage.getItem("CART_COUNT") ?? "[]")
+  );
+  const [_currentCart, setCurrentCart] = useLocalStorage<ProductProps[]>(
+    "CART_COUNT",
+    cart
+  );
+
+  useEffect(() => {
+    if (cart.length > 0) {
+      setCurrentCart(cart);
+    }
+  }, [cart]);
+
+  console.log(cart);
 
   return (
     <FilterContext.Provider
       value={{
+        cart,
+        setCart,
         search,
         page,
         type,

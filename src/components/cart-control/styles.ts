@@ -4,6 +4,7 @@ export const CartWrapper = styled.div`
   position: relative;
   width: max-content;
   display: flex;
+  cursor: pointer;
 `;
 
 export const CartCount = styled.span`

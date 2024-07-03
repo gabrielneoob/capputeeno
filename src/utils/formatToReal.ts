@@ -4,5 +4,5 @@ export const formatToReal = (priceInCents: number) => {
     currency: "BRL",
   });
 
-  return formatter.format(priceInCents);
+  return formatter.format(priceInCents / 100);
 };

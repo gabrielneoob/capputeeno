@@ -5,6 +5,8 @@
   --text-dark: #737380;
   --delete-color: #de3838;
   --orange-low: #ffa585;
+  --secondary-text: #617480;
+  --brand-blue: #115d8c;
 }
 
 * {
@@ -12,6 +14,7 @@
   padding: 0;
   box-sizing: border-box;
   list-style: none;
+  font-family: "Saira", Arial, Helvetica, sans-serif;
 }
 
 img {
