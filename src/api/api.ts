@@ -1,7 +1,7 @@
 import axios, { AxiosPromise } from "axios";
-import { ProductsFetchResponse } from "./types";
+import { ProductFetchResponse, ProductsFetchResponse } from "./types";
 
-const getProduct = async (
+const getProducts = async (
   query: string
 ): AxiosPromise<ProductsFetchResponse> => {
   return await axios.post("http://localhost:3333", {
@@ -9,6 +9,24 @@ const getProduct = async (
   });
 };
 
+export const getProduct = async (
+  id: string
+): AxiosPromise<ProductFetchResponse> => {
+  return await axios.post("http://localhost:3333", {
+    query: `query {
+  Product(id: "${id}"){
+    id,
+    name,
+    image_url,
+    price_in_cents,
+    description,
+    category
+  }
+}`,
+  });
+};
+
 export const api = {
+  getProducts,
   getProduct,
 };
