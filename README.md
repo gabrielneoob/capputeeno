@@ -1,30 +1,70 @@
-# React + TypeScript + Vite
+# Capputeeno
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome! This respostitory contains my solution for [Rocketseat´s](https://www.rocketseat.com.br/ignite?utm_source=influencer&utm_medium=publipost&utm_campaign=lead&utm_term=ignite&utm_content=lead-ignite-publipost-organic-cupom_KIPPERDEV-none-none-none-none-redes_kipperdev&referral=kipperdev&coupon=KIPPERDEV@IGNITE) open source [Frontend Challenge](https://github.com/Rocketseat/frontend-challenge).
 
-Currently, two official plugins are available:
+![Prototype](./.github/prototype.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# 🧠 About
 
-## Expanding the ESLint configuration
+The challenge is to implement an e-commerce for the sale of mugs and t-shirts that should have the following functionalities:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- [x] Product catalog with pagination
+- [x] Filter products by category
+- [x] Search by product name
+- [x] Add and remove products from cart
+- [ ] Checkout
 
-- Configure the top-level `parserOptions` property like this:
+## 📋 Requirements
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+- Follow [this prototype](https://www.figma.com/file/rET9F2CeUEJdiVN7JRu993/E-commerce---capputeeno?node-id=680%3A6449)
+- Create components with styled-components
+- consume from the provided **GraphQL API**
+
+## 🖥️ Installation
+
+### Frontend
+
+1. Clone this repo
+
+```bash
+git clone https://github.com/gabrielneoob/capputeeno.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Go to the project folder
+
+```bash
+cd challenge-frontend
+cd capputeeno
+```
+
+3. Install dependencies
+
+```bash
+npm install
+```
+
+3. Run Frontend
+
+```bash
+npm run dev
+```
+
+### Running the API
+
+2. Go to the API folder
+
+```bash
+cd dataBase
+```
+
+3. Install dependencies
+
+```bash
+npm install
+```
+
+3. Run start
+
+```bash
+npm start
+```
