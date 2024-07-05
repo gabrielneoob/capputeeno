@@ -1,4 +1,4 @@
-import { ProductProps } from "../../api/types";
+import { CartItemProps } from "../../pages/payment/Payment";
 
 export enum FilterType {
   ALL = "ALL",
@@ -18,8 +18,8 @@ export interface FilterContextProps {
   page: number;
   type: FilterType;
   priority: PriorityType;
-  cart: ProductProps[];
-  setCart: React.Dispatch<React.SetStateAction<ProductProps[]>>;
+  cart: CartItemProps[];
+  setCart: React.Dispatch<React.SetStateAction<CartItemProps[]>>;
   setPriority: React.Dispatch<React.SetStateAction<PriorityType>>;
   setSearch: React.Dispatch<React.SetStateAction<string>>;
   setType: React.Dispatch<React.SetStateAction<FilterType>>;

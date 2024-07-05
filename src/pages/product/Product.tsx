@@ -7,9 +7,34 @@ import ShoppingBagIcon from "../../components/icons/shopping-bag-icon";
 import { useFilter } from "../../contexts/filter-context/filterContext";
 
 const Product = () => {
-  const { id } = useParams();
-  const { data } = useProduct(id as string);
+  const { id: cartId } = useParams();
+  const { data } = useProduct(cartId as string);
   const { setCart } = useFilter();
+
+  const handleAddToCart = () => {
+    const cartItems = localStorage.getItem("CART_ITEMS");
+    if (cartItems) {
+      const cartItemsArray = JSON.parse(cartItems);
+
+      const existingProductIndex = cartItemsArray.findIndex(
+        (item: { id: string }) => item.id === cartId
+      );
+
+      if (existingProductIndex != -1) {
+        cartItemsArray[existingProductIndex].quantity += 1;
+      } else {
+        cartItemsArray.push({ ...data, quantity: 1, id: cartId });
+      }
+
+      // localStorage.setItem("CART_ITEMS", JSON.stringify(cartItemsArray));
+      setCart(cartItemsArray);
+    } else {
+      const newCart = [{ ...data, quantity: 1, id: cartId }];
+      setCart(newCart);
+
+      // localStorage.setItem("CART_ITEMS", JSON.stringify(newCart));
+    }
+  };
 
   return (
     <S.Container>
@@ -32,15 +57,7 @@ const Product = () => {
               <p>{data?.description}</p>
             </div>
           </S.ProductInfo>
-          <S.BuyBtn
-            onClick={() => {
-              if (data) {
-                setCart((previous) => {
-                  return [...previous, data];
-                });
-              }
-            }}
-          >
+          <S.BuyBtn onClick={handleAddToCart}>
             <ShoppingBagIcon type="add-cart" />
             <p>ADICIONAR AO CARRINHO</p>
           </S.BuyBtn>
@@ -51,3 +68,11 @@ const Product = () => {
 };
 
 export default Product;
+
+// () => {
+//   if (data) {
+//     setCart((previous) => {
+//       return [...previous, data];
+//     });
+//   }
+// }

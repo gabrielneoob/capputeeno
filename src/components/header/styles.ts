@@ -22,6 +22,10 @@ export const TagHeader = styled.header`
   @media (min-width: ${(props) => props.theme.desktopBreakPoint}) {
     padding: 20px 160px;
   }
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 export const Logo = styled.a`

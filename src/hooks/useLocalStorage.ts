@@ -8,6 +8,7 @@ function useLocalStorage<T>(key: string, initialValue: T) {
     if (storedValue) {
       return JSON.parse(storedValue) as T;
     }
+
     return initialValue;
   };
 

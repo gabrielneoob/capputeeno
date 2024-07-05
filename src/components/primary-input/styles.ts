@@ -4,11 +4,19 @@ export const InputContainer = styled.div`
   position: relative;
   width: 352px;
 
+  @media (max-width: 800px) {
+    width: 279px;
+  }
+
   svg {
     position: absolute;
     right: 20px;
     top: 10px;
     cursor: pointer;
+
+    @media (max-width: 800px) {
+      right: 20px;
+    }
   }
 `;
 
@@ -26,4 +34,8 @@ export const PrimaryInput = styled.input`
   color: var(--text-dark);
   outline: none;
   border: none;
+
+  @media (max-width: 800px) {
+    width: 280px;
+  }
 `;

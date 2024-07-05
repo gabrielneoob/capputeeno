@@ -11,6 +11,7 @@ export const useProducts = () => {
   const { data, isLoading } = useQuery({
     queryFn: () => api.getProducts(query),
     queryKey: ["products", type, priority],
+    staleTime: 1000 * 60 * 1,
   });
 
   const products = data?.data?.data?.allProducts;

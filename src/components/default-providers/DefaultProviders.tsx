@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import { QueryClientProvider } from "react-query";
 import { queryClient } from "../../queryClient";
 import { BrowserRouter } from "react-router-dom";

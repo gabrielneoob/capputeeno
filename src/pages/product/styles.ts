@@ -24,6 +24,19 @@ export const Container = styled.div`
       height: 520px;
       justify-content: space-between;
     }
+
+    @media (max-width: 800px) {
+      flex-direction: column;
+      margin: 0 1rem;
+      img {
+        max-width: 500px;
+        width: 100%;
+      }
+      > div {
+        height: auto;
+        width: auto;
+      }
+    }
   }
 `;
 
